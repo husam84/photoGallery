@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Photo Gallery App</title>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/handlebars-v3.0.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/AnimalsData.js"></script>
+	<script src="js/main.js"></script>	
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+	</head>
+  <body>
+	<!-- container for jumbotron -->	
+	<div class="container-fluid">
+        <div class="jumbotron container-fluid vertical-center">
+			<h1>Animal World</h1>
+			<p>The Magical World of Animals</p>
+		</div>
+	</div>	<!-- /container for jumbotron -->	
+	
+	
+	<ol class="breadcrumb">
+			<li><a href="#" id="categories-crumb">Home</a></li>
+    </ol>
+    
+	<!-- main content will render here -->	
+	 <div id="content"  class="container"  role="main">
+	 </div>
+	 
+	 <!-- Footer -->	
+	 <footer class="footer">
+      <div class="container-fluid">
+        <p class="text-muted">Photo Gallery App by Husam</p>
+      </div>
+    </footer>
+	
+	<!-- categories template -->
+	<script id="categories-template" type="text/x-handlebars-template">
+		<div class="row">
+			<div class="col-lg-12">
+				<p>Choose a category:</p>
+			</div><!-- /column -->	
+		</div><!-- /row -->	
+		
+		<div class="row">
+			{{#each category}}	
+				<div class="col-sm-6 col-md-3">
+					<div class="category-thumbnail" data-id="{{@index}}">
+						<h3>{{name}}</h3>
+						<img src="{{animals.[0].image1}}" class="img-responsive img-rounded">
+					</div>				
+				</div><!-- /column -->	
+			{{/each}}
+		</div><!-- /row -->			
+	</script><!-- categories template -->
+		
+	<!-- category template -->	
+	<script id="category-template" type="text/x-handlebars-template">
+		<div class="row">
+			<div class="col-lg-12">
+				<p>Choose an animal:</p>
+			</div><!-- /column -->	
+		</div><!-- /row -->	
+		
+		<div class="row">
+			{{#each animals}}	
+				<div class="col-sm-6 col-md-3">
+					<div class="animal-thumbnail" data-id="{{@index}}">
+						<h3>{{name}}</h3>
+						<img src="{{image1}}" class="img-responsive img-rounded">
+					</div>				
+				</div><!-- /column -->	
+			{{/each}}
+		</div><!-- /row -->			
+	</script><!-- category template -->
+	
+	<!-- animal template -->	
+	<script id="animal-template" type="text/x-handlebars-template" data-id="{{@index}}">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>{{name}}</h2>
+			</div><!-- /column -->	
+		</div><!-- /row -->	
+		
+		<div class="row">				
+			<div class="col-md-6">
+				<p>{{description}}</p>
+			</div><!-- /column -->	
+			
+			<div class="image-thumbnail" data-id="{{@index}}">
+				<div class="col-md-3">
+					<img src="{{image1}}" alt="" class="image-1 img-responsive img-rounded"/>
+				</div><!-- /column -->		
+				
+				<div class="col-md-3">
+					<img src="{{image2}}" alt="" class="image-2 img-responsive img-rounded"/>							
+				</div><!-- /column -->		
+			</div>			
+		</div><!-- /row -->			
+	</script><!-- animal template -->
+	
+	<!-- breadcrumb template -->	
+    <script id="breadcrumb-template" type="text/x-handlebars-template">
+      <li><a href="#" id="{{type}}-crumb">{{name}}</a></li>
+    </script>
+	
+  </body>
+</html>
