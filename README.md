@@ -1,2 +1,1 @@
-# photoGallery
-Data driven JavaScript photo gallery app.
+#Data driven JavaScript photo gallery app.
