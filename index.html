@@ -46,12 +46,12 @@
 			</div><!-- /column -->	
 		</div><!-- /row -->	
 		
-		<div class="row">
+		<div class="row change-default-1">
 			{{#each category}}	
-				<div class="col-sm-6 col-md-3">
+				<div class="col-sm-6 custom-col-md-2 custom-col-lg-2">
 					<div class="category-thumbnail" data-id="{{@index}}">
 						<h3>{{name}}</h3>
-						<img src="{{animals.[0].image1}}" class="img-responsive img-rounded">
+						<img id="image" src="{{animals.[0].image1}}" class="img-responsive img-rounded">
 					</div>				
 				</div><!-- /column -->	
 			{{/each}}
@@ -71,7 +71,7 @@
 				<div class="col-sm-6 col-md-3">
 					<div class="animal-thumbnail" data-id="{{@index}}">
 						<h3>{{name}}</h3>
-						<img src="{{image1}}" class="img-responsive img-rounded">
+						<img id="image" src="{{image1}}" class="img-responsive img-rounded">
 					</div>				
 				</div><!-- /column -->	
 			{{/each}}
@@ -93,11 +93,11 @@
 			
 			<div class="image-thumbnail" data-id="{{@index}}">
 				<div class="col-md-3">
-					<img src="{{image1}}" alt="" class="image-1 img-responsive img-rounded"/>
+					<img id="image" src="{{image1}}" alt="" class="image-1 img-responsive img-rounded"/>
 				</div><!-- /column -->		
 				
 				<div class="col-md-3">
-					<img src="{{image2}}" alt="" class="image-2 img-responsive img-rounded"/>							
+					<img id="image" src="{{image2}}" alt="" class="image-2 img-responsive img-rounded"/>							
 				</div><!-- /column -->		
 			</div>			
 		</div><!-- /row -->			
